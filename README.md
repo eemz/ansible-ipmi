@@ -7,6 +7,8 @@ addresses are specified in a YAML (or JSON) file.
 
 A typical credentials file would look like this:
 
+
+```
 ---
   servers:
     - id: "rabbit01"
@@ -29,6 +31,7 @@ A typical credentials file would look like this:
       ilo-user: "mnadmin"
       ilo-password: "whatever"
       ilo-extras: "-B0 -b7 -T82 -t24"
+```
 
 The ilo-extras field is the only one that's not obvious... it exists to allow you
 to specify extra addressing parameters that are required by some IPMI devices.
