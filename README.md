@@ -3,7 +3,15 @@ An Ansible module to allow playbooks to communicate with remote devices using IP
 
 This module can issue commands to any device that implements IPMI, which includes most
 data center switches and other hardware, including servers. Credentials and network
-addresses are specified in a YAML (or JSON) file.
+addresses are specified in a YAML file.
+
+Example usage:
+```
+- ipmi: credsfile="/srv/nodeinfo.yml" name=rabbit01 bootdev=pxe options=persistent
+- ipmi: credsfile="/srv/nodeinfo.yml" name=rabbit01 power=cycle
+- ipmi: credsfile="/srv/nodeinfo.yml" name=switch1 power=off
+- ipmi: credsfile="/srv/nodeinfo.yml" name=compute423 passthru="mc reset cold"
+```
 
 A typical credentials file would look like this:
 
